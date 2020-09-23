@@ -55,7 +55,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
-    'posts'
+    'posts',
+    'stories'
 
 ]
 

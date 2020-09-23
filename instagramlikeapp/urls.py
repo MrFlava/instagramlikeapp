@@ -30,6 +30,7 @@ urlpatterns = [
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
     path('api/posts/', include("posts.urls")),
+    path('api/stories/', include("stories.urls")),
 ]
 
 

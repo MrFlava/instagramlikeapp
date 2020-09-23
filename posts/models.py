@@ -1,3 +1,4 @@
+from PIL import Image
 from django.db import models
 from datetime import datetime
 from django.contrib.auth import get_user_model
@@ -13,6 +14,14 @@ class Post(models.Model):
 
     def __str__(self):
         return self.description
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        img = Image.open(self.image.path)
+        if img.height > 1000 or img.width > 1000:
+            output_size = (1000, 1000)
+            img.thumbnail(output_size)
+            img.save(self.image.path)
 
     objects = models.Manager()
 
@@ -39,3 +48,6 @@ class Comment(models.Model):
     body = models.TextField()
 
     objects = models.Manager()
+
+    def __str__(self):
+        return str(self.user) + ':   ' + str(self.post) + ':' + str(self.body) + ':   ' + str(self.date)
