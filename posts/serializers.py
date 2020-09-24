@@ -11,8 +11,6 @@ class PostSerializer(serializers.ModelSerializer):
 
 
 class LikeSerializer(serializers.ModelSerializer):
-    # like = serializers.StringRelatedField(read_only=True)
-    # user = serializers.IntegerField(required=False)
 
     class Meta:
         model = Like
@@ -20,8 +18,6 @@ class LikeSerializer(serializers.ModelSerializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
-    # comment = serializers.StringRelatedField(read_only=True)
-    # user = serializers.IntegerField(required=False)
 
     class Meta:
         model = Comment
