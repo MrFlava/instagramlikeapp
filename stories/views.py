@@ -3,7 +3,7 @@ import datetime
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import (CreateAPIView, ListAPIView)
 
-from stories.serializers import StorySerializer
+from stories.serializers import StorySerializer, WatchedStorySerializer
 from stories.models import Story, WatchedStory
 
 
@@ -29,7 +29,7 @@ class StoryListView(ListAPIView):
 class WatchStoryView(CreateAPIView):
 
     queryset = WatchedStory.objects.all()
-    serializer_class = StorySerializer
+    serializer_class = WatchedStorySerializer
     permission_classes = [IsAuthenticated]
 
     def perform_create(self, serializer):

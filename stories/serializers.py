@@ -1,10 +1,17 @@
 from rest_framework import serializers
 
-from stories.models import Story
+from stories.models import Story, WatchedStory
 
 
 class StorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Story
+        fields = '__all__'
+
+
+class WatchedStorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = WatchedStory
         fields = '__all__'

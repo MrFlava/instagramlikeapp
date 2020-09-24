@@ -9,7 +9,7 @@ from django.contrib.auth import get_user_model
 class Story(models.Model):
     image = models.ImageField(upload_to="story_images")
     date = models.DateTimeField("date published", default=datetime.now())
-    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,  blank=True)
 
     def __str__(self):
         return str(self.author) + ':   ' + str(self.date)
@@ -27,7 +27,7 @@ class Story(models.Model):
 
 class WatchedStory(models.Model):
     story = models.ForeignKey(Story, related_name='watchedstories', on_delete=models.CASCADE)
-    user = models.ForeignKey(get_user_model(), related_name='watchedstories', on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), related_name='watchedstories', on_delete=models.CASCADE,  blank=True)
 
     def __str__(self):
         return str(self.user) + ':   ' + str(self.story)
