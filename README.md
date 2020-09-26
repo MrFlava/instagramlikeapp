@@ -1,8 +1,8 @@
 This app contains basic Instagram features - users (login/logout only), photos list, photo upload, stories list (implement only photos, read status required to filter only unread posts, also display only recent stories that created during last 24 hours), likes, comments tree and photo validation.
 
-I used this <a href='https://github.com/sunscrapers/djoser'>djoser</a> for register, login and logout functional and Django Rest Framework for all this project.
+I used <a href='https://github.com/sunscrapers/djoser'>djoser</a> for register, login and logout functional and Django Rest Framework for the whole project.
 
-Here's requests for this app:
+Here are requests for this app:
 
     1. Authorization 
     
@@ -38,7 +38,7 @@ Here's requests for this app:
         api/stories/create - create a new story.
         
         GET
-        api/stories/show-stories - list of unwatched stories.
+        api/stories/show-stories - list of resent unwatched stories.
         
         POST
         api/stories/watch-story - watch a story you picked.
